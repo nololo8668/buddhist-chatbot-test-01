@@ -1,11 +1,14 @@
 const express = require('express');
 const OpenAI = require('openai');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
 app.use(express.json());
-app.use(express.static('static'));
-app.use(express.static('templates'));
+
+// static 파일 경로 설정 수정
+app.use('/static', express.static(path.join(__dirname, 'static')));
+app.use('/templates', express.static(path.join(__dirname, 'templates')));
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
@@ -13,7 +16,7 @@ const openai = new OpenAI({
 
 // 기본 HTML 페이지 제공
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/templates/index.html');
+  res.sendFile(path.join(__dirname, 'templates', 'index.html'));
 });
 
 // 챗봇 API 엔드포인트
