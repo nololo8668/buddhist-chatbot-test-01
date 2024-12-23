@@ -235,6 +235,24 @@
                 addMessage('오류가 발생했습니다: ' + error, false);
             });
         }
+
+        // 페이지 로드 시 자동 인사 메시지
+        window.onload = function() {
+            fetch('/chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({message: "첫 인사"})
+            })
+            .then(response => response.json())
+            .then(data => {
+                addMessage(data.response, false);
+            })
+            .catch(error => {
+                addMessage('오류가 발생했습니다: ' + error, false);
+            });
+        }
     </script>
 </body>
 </html> 
