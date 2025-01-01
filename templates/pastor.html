@@ -23,7 +23,7 @@
             border-radius: 12px;
             display: flex;
             flex-direction: column;
-            min-height: 95vh;
+            height: 100vh;
             width: 100%;
         }
 
@@ -54,14 +54,14 @@
             display: flex;
             flex-direction: column;
             padding: 10px;
-            overflow: hidden;
+            overflow-y: auto;
+            position: relative;
         }
 
         #messages {
             flex: 1;
             overflow-y: auto;
             padding: 10px;
-            margin-bottom: 10px;
             display: flex;
             flex-direction: column;
         }
@@ -109,6 +109,10 @@
             gap: 8px;
             padding: 10px;
             border-top: 1px solid #eee;
+            position: sticky;
+            bottom: 0;
+            background: white;
+            z-index: 1000;
         }
 
         #message {
@@ -118,6 +122,8 @@
             border-radius: 20px;
             outline: none;
             font-size: 0.95rem;
+            -webkit-appearance: none;
+            appearance: none;
         }
 
         button {
@@ -131,8 +137,22 @@
         }
 
         @media (max-width: 480px) {
+            body {
+                padding: 0;
+            }
+
             .container {
-                min-height: 85vh;
+                height: 100vh;
+                border-radius: 0;
+            }
+
+            .input-container {
+                padding: 8px;
+                padding-bottom: max(8px, env(safe-area-inset-bottom));
+            }
+
+            #message {
+                font-size: 16px;
             }
 
             h1 {
