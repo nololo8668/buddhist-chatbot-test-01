@@ -30,16 +30,10 @@
 
         .header {
             text-align: center;
-            padding: 40px 20px;
+            padding: 25px 20px;
             background: linear-gradient(to right, #4a90e2, #e24a4a);
             border-radius: 12px 12px 0 0;
             color: white;
-        }
-
-        .header-icon {
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: rgba(255, 255, 255, 0.9);
         }
 
         h1 {
@@ -50,7 +44,7 @@
         }
 
         .subtitle {
-            margin-top: 10px;
+            margin-top: 8px;
             font-size: 1.1rem;
             opacity: 0.9;
         }
@@ -62,7 +56,7 @@
             justify-content: center;
             flex: 1;
             gap: 20px;
-            padding: 40px 20px;
+            padding: 30px 20px;
             background: rgba(255, 255, 255, 0.8);
         }
 
@@ -103,13 +97,24 @@
             font-size: 1.4rem;
         }
 
+        .info-section {
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 0 0 12px 12px;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            border-top: 1px solid #eee;
+        }
+
+        .info-section p {
+            margin: 5px 0;
+            line-height: 1.4;
+        }
+
         @media (max-width: 480px) {
             .header {
-                padding: 30px 15px;
-            }
-
-            .header-icon {
-                font-size: 40px;
+                padding: 20px 15px;
             }
 
             h1 {
@@ -125,15 +130,17 @@
                 font-size: 1.1rem;
                 padding: 15px;
             }
+
+            .info-section {
+                font-size: 0.85rem;
+                padding: 15px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <div class="header-icon">
-                <i class="fas fa-hands-helping"></i>
-            </div>
             <h1>AI 고민 상담 챗봇</h1>
             <div class="subtitle">당신의 이야기를 들려주세요</div>
         </div>
@@ -146,6 +153,11 @@
                 <i class="fas fa-church button-icon"></i>
                 신부님과 대화하기
             </a>
+        </div>
+        <div class="info-section">
+            <p>이 AI 챗봇은 OpenAI의 GPT-4를 기반으로 제작되었습니다.</p>
+            <p>종교적 관점에서 상담을 제공하며, 모든 대화는 비공개로 진행됩니다.</p>
+            <p>© 2024 AI 고민 상담 챗봇 | 개발자: 노희용</p>
         </div>
     </div>
 </body>
