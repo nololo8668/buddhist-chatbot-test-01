@@ -1,1 +1,1 @@
-web: gunicorn mychat01:app 
+web: node index.js 
